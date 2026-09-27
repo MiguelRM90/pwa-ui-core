@@ -1,5 +1,6 @@
 /**
- * pwa-ui-core: Reset Base PWA
+ * pwa-ui-core: PWA Base Reset
+ * Modern reset with safe-area insets, custom slim scrollbars, and antialiased typography.
  */
 
 *,
@@ -29,6 +30,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Mobile notch and home indicator safe areas */
 body {
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -36,6 +38,7 @@ body {
   padding-right: env(safe-area-inset-right, 0px);
 }
 
+/* Form controls typography inheritance */
 input,
 button,
 textarea,
@@ -45,6 +48,7 @@ select {
   color: inherit;
 }
 
+/* Custom modern scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

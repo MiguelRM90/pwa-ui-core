@@ -9,7 +9,7 @@ import { PwaService } from '../../services/pwa.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="pwa-header">
-      <!-- Banner de nueva versión de PWA -->
+      <!-- PWA Update Banner -->
       @if (showUpdateBanner() && pwa.hasUpdate()) {
         <div class="pwa-header__banner">
           <span>{{ updateMessage() }}</span>
@@ -20,7 +20,7 @@ import { PwaService } from '../../services/pwa.service';
       }
 
       <div class="pwa-container pwa-header__inner">
-        <!-- Logo y Marca -->
+        <!-- Logo and Branding -->
         <div class="pwa-header__brand">
           <ng-content select="[header-logo]"></ng-content>
           <div class="pwa-header__titles">
@@ -36,27 +36,27 @@ import { PwaService } from '../../services/pwa.service';
           </div>
         </div>
 
-        <!-- Acciones a la Derecha e Indicadores -->
+        <!-- Right Side Actions & Indicators -->
         <div class="pwa-header__actions">
-          <!-- Estado Online/Offline -->
+          <!-- Online/Offline Network Status -->
           @if (showNetworkStatus()) {
             <div
               class="pwa-badge"
               [ngClass]="pwa.isOnline() ? 'pwa-badge--success' : 'pwa-badge--danger'"
-              [title]="pwa.isOnline() ? 'Conectado a internet' : 'Modo Offline - Datos en almacenamiento local'"
+              [title]="pwa.isOnline() ? 'Connected to internet' : 'Offline mode - Local data storage active'"
             >
               <span class="pwa-badge-dot" [class.pwa-badge-dot--pulse]="pwa.isOnline()"></span>
               <span class="pwa-header__network-text">{{ pwa.isOnline() ? 'Online' : 'Offline' }}</span>
             </div>
           }
 
-          <!-- Botón de Instalación PWA -->
+          <!-- PWA Installation Button -->
           @if (showInstallButton() && pwa.canInstall()) {
             <button
               type="button"
               class="pwa-btn pwa-btn--primary pwa-btn--sm"
               (click)="onInstallPrompt()"
-              title="Instalar en pantalla de inicio"
+              title="Install app to your home screen"
             >
               <svg class="pwa-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -163,9 +163,9 @@ export class PwaHeaderComponent {
   readonly showNetworkStatus = input<boolean>(true);
   readonly showInstallButton = input<boolean>(true);
   readonly showUpdateBanner = input<boolean>(true);
-  readonly installButtonText = input<string>('Instalar App');
-  readonly updateMessage = input<string>('Nueva versión disponible.');
-  readonly updateButtonText = input<string>('Actualizar');
+  readonly installButtonText = input<string>('Install App');
+  readonly updateMessage = input<string>('A new version is available.');
+  readonly updateButtonText = input<string>('Update');
 
   readonly installed = output<boolean>();
 

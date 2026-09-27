@@ -1,5 +1,5 @@
 /**
- * pwa-ui-core: Utilidades de Maquetación y Animaciones
+ * pwa-ui-core: Layout Utilities & Keyframe Animations
  */
 
 .pwa-container {
@@ -93,6 +93,7 @@
   animation: pwa-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+/* Mobile tactile feedback */
 .pwa-tactile {
   transition: var(--pwa-transition-tactile);
   user-select: none;
@@ -103,6 +104,7 @@
   transform: scale(0.97);
 }
 
+/* Accessible screen-reader only */
 .pwa-sr-only {
   position: absolute;
   width: 1px;

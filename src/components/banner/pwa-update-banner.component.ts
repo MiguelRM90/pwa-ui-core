@@ -53,7 +53,7 @@ export class PwaUpdateBannerComponent {
   readonly pwa = inject(PwaService);
 
   readonly message = input<string>(
-    'Hay una nueva versión disponible con mejoras de cálculo y rendimiento.'
+    'A new version is available with calculation and performance improvements.'
   );
-  readonly buttonText = input<string>('Actualizar ahora');
+  readonly buttonText = input<string>('Update now');
 }

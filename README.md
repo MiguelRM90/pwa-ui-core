@@ -1,44 +1,44 @@
 # pwa-ui-core
 
-Librería centralizada de **Design Tokens**, **CSS semántico nativo** y **componentes Standalone de Angular** para aplicaciones web progresivas (PWA).
+Centralized library of **Design Tokens**, **Semantic Native CSS**, and **Standalone Angular UI Components** for Progressive Web Apps (PWAs).
 
-Elimina la dependencia de Tailwind CSS en favor de CSS moderno, limpio y ligero, optimizado para interfaces móviles táctiles y rendimiento PWA sin sobreingeniería.
+Eliminates the dependency on Tailwind CSS in favor of clean, modern, and lightweight native CSS optimized for mobile touch interfaces and PWA performance without overengineering.
 
 ---
 
-## 📦 Instalación e Integración
+## 📦 Installation & Setup
 
-### 1. Importación de Estilos y Tokens en tu PWA (`styles.css`)
+### 1. Import Styles and Tokens in your PWA (`styles.css`)
 
-Puedes importar los tokens individuales o el bundle completo:
+You can import the complete bundle or individual modular layers:
 
 ```css
-/* Opción recomendada: Bundle completo (Tokens + Reset PWA + Clases + Utilidades) */
+/* Recommended: Complete bundle (Tokens + PWA Reset + Semantic Classes + Layout Utilities) */
 @import "pwa-ui-core/styles";
 
-/* O bien, importar por capas: */
+/* Or import by layers: */
 @import "pwa-ui-core/tokens";
 @import "pwa-ui-core/styles/reset";
 @import "pwa-ui-core/styles/components";
 @import "pwa-ui-core/styles/utilities";
 ```
 
-### 2. Personalización del Color de Marca de tu App
+### 2. Customizing Your App Brand Color
 
-Cada PWA puede personalizar su color de marca en su `:root` sin alterar el resto del sistema de diseño:
+Each PWA can easily override its primary brand color in its `:root` stylesheet without affecting the rest of the design system:
 
 ```css
-/* En el styles.css de tu PWA: */
+/* In your PWA's styles.css: */
 :root {
-  /* Ejemplo: DipWise (Sky) */
+  /* Example: DipWise (Sky) */
   --pwa-brand-500: #0284c7;
   --pwa-brand-600: #0369a1;
 
-  /* Ejemplo: Spanish Mortgage Planner (Indigo) */
+  /* Example: Spanish Mortgage Planner (Indigo) */
   /* --pwa-brand-500: #4f46e5; */
   /* --pwa-brand-600: #4338ca; */
 
-  /* Ejemplo: BleepSync (Emerald) */
+  /* Example: BleepSync (Emerald) */
   /* --pwa-brand-500: #10b981; */
   /* --pwa-brand-600: #059669; */
 }
@@ -46,33 +46,33 @@ Cada PWA puede personalizar su color de marca en su `:root` sin alterar el resto
 
 ---
 
-## 🎨 Design Tokens (Variables CSS)
+## 🎨 Design Tokens (CSS Custom Properties)
 
-- **Superficies**: `--pwa-bg-canvas`, `--pwa-bg-surface`, `--pwa-bg-card`, `--pwa-bg-card-hover`, `--pwa-bg-subtle`, `--pwa-bg-input`.
-- **Textos**: `--pwa-text-primary`, `--pwa-text-secondary`, `--pwa-text-muted`, `--pwa-text-inverse`.
-- **Bordes**: `--pwa-border`, `--pwa-border-strong`, `--pwa-border-subtle`.
-- **Estados**: `--pwa-success`, `--pwa-warning`, `--pwa-danger`, `--pwa-info` (con sus variantes `-soft` y `-text`).
-- **Radios**: `--pwa-radius-sm` (8px), `--pwa-radius-md` (12px), `--pwa-radius-lg` (16px), `--pwa-radius-xl` (24px), `--pwa-radius-full` (9999px).
-- **Tipografía**: `--pwa-font-sans`, `--pwa-font-mono`, y `--pwa-font-features` (incluye números tabulares `tnum`).
+- **Surfaces**: `--pwa-bg-canvas`, `--pwa-bg-surface`, `--pwa-bg-card`, `--pwa-bg-card-hover`, `--pwa-bg-subtle`, `--pwa-bg-input`.
+- **Text**: `--pwa-text-primary`, `--pwa-text-secondary`, `--pwa-text-muted`, `--pwa-text-inverse`.
+- **Borders**: `--pwa-border`, `--pwa-border-strong`, `--pwa-border-subtle`.
+- **States**: `--pwa-success`, `--pwa-warning`, `--pwa-danger`, `--pwa-info` (with `-soft` and `-text` variants).
+- **Radii**: `--pwa-radius-sm` (8px), `--pwa-radius-md` (12px), `--pwa-radius-lg` (16px), `--pwa-radius-xl` (24px), `--pwa-radius-full` (9999px).
+- **Typography**: `--pwa-font-sans`, `--pwa-font-mono`, and `--pwa-font-features` (includes tabular numbers `tnum`).
 
 ---
 
-## 🧩 Clases CSS Semánticas (Zero-Tailwind)
+## 🧩 Semantic CSS Classes (Zero-Tailwind)
 
-| Elemento | Clases disponibles |
+| Element | Available Classes |
 | :--- | :--- |
-| **Botones** | `.pwa-btn`, `.pwa-btn--primary`, `.pwa-btn--secondary`, `.pwa-btn--danger`, `.pwa-btn--ghost`, `.pwa-btn--soft`, `.pwa-btn--sm`, `.pwa-btn--lg`, `.pwa-btn--icon`, `.pwa-btn--chip` |
-| **Tarjetas** | `.pwa-card`, `.pwa-card--interactive`, `.pwa-card--subtle` |
-| **Formularios** | `.pwa-input-group`, `.pwa-label`, `.pwa-input`, `.pwa-select`, `.pwa-textarea`, `.pwa-slider` |
-| **Badges** | `.pwa-badge`, `.pwa-badge--success`, `.pwa-badge--warning`, `.pwa-badge--danger`, `.pwa-badge--info`, `.pwa-badge-dot`, `.pwa-badge-dot--pulse` |
-| **Contenedores** | `.pwa-container`, `.pwa-container--narrow`, `.pwa-grid-kpis`, `.pwa-grid-2` |
-| **Tablas PWA** | `.pwa-table-container`, `.pwa-table` |
+| **Buttons** | `.pwa-btn`, `.pwa-btn--primary`, `.pwa-btn--secondary`, `.pwa-btn--danger`, `.pwa-btn--ghost`, `.pwa-btn--soft`, `.pwa-btn--sm`, `.pwa-btn--lg`, `.pwa-btn--icon`, `.pwa-btn--chip` |
+| **Cards** | `.pwa-card`, `.pwa-card--interactive`, `.pwa-card--subtle` |
+| **Form Controls** | `.pwa-input-group`, `.pwa-label`, `.pwa-input`, `.pwa-select`, `.pwa-textarea`, `.pwa-slider` |
+| **Badges & Pills** | `.pwa-badge`, `.pwa-badge--success`, `.pwa-badge--warning`, `.pwa-badge--danger`, `.pwa-badge--info`, `.pwa-badge-dot`, `.pwa-badge-dot--pulse` |
+| **Containers & Grid** | `.pwa-container`, `.pwa-container--narrow`, `.pwa-grid-kpis`, `.pwa-grid-2` |
+| **PWA Tables** | `.pwa-table-container`, `.pwa-table` |
 
 ---
 
-## ⚡ Componentes Standalone Angular (`ChangeDetectionStrategy.OnPush`)
+## ⚡ Standalone Angular Components (`ChangeDetectionStrategy.OnPush`)
 
-Todos los componentes son Standalone y pueden importarse individualmente:
+All components are Standalone and tree-shakeable:
 
 ```typescript
 import {
@@ -86,15 +86,56 @@ import {
 } from 'pwa-ui-core';
 ```
 
+### Example: PWA Header with Network Indicator & App Installer
+```html
+<pwa-header
+  title="DipWise"
+  subtitle="ATH Tactical DCA"
+  badgeText="Offline First"
+>
+  <div header-logo class="w-10 h-10 rounded-xl bg-sky-600 flex items-center justify-center text-white font-bold">
+    📈
+  </div>
+
+  <div header-actions>
+    <button type="button" class="pwa-btn pwa-btn--secondary pwa-btn--sm" (click)="openSettings()">
+      ⚙️ Settings
+    </button>
+  </div>
+</pwa-header>
+```
+
+### Example: Accessible Modal Dialog
+```html
+<pwa-modal
+  [isOpen]="isSettingsOpen()"
+  title="Portfolio Configuration"
+  subtitle="Adjust periodic DCA parameters"
+  (close)="isSettingsOpen.set(false)"
+>
+  <div class="space-y-4">
+    <div class="pwa-input-group">
+      <label class="pwa-label">Monthly Budget (€)</label>
+      <input type="number" class="pwa-input" [(ngModel)]="budget" />
+    </div>
+  </div>
+
+  <div modal-footer>
+    <button type="button" class="pwa-btn pwa-btn--secondary" (click)="isSettingsOpen.set(false)">Cancel</button>
+    <button type="button" class="pwa-btn pwa-btn--primary" (click)="save()">Save Changes</button>
+  </div>
+</pwa-modal>
+```
+
 ---
 
-## 🛠️ Servicios Core
+## 🛠️ Core PWA Services
 
-- **`PwaService`**: Signals `isOnline()`, `canInstall()`, `hasUpdate()`. Métodos `promptInstall(): Promise<boolean>`, `applyUpdate(): void`.
-- **`ThemeService`**: Signals `mode()` ('light' | 'dark' | 'system'), `isDark()`. Métodos `setTheme()`, `toggleTheme()`.
-- **`PwaToastService`**: Métodos `success()`, `error()`, `warning()`, `info()`, `dismiss()`.
+- **`PwaService`**: Reactive signals `isOnline()`, `canInstall()`, `hasUpdate()`. Methods `promptInstall(): Promise<boolean>`, `applyUpdate(): void`.
+- **`ThemeService`**: Signals `mode()` ('light' | 'dark' | 'system'), `isDark()`. Methods `setTheme()`, `toggleTheme()`.
+- **`PwaToastService`**: Toast trigger methods `success()`, `error()`, `warning()`, `info()`, `dismiss()`.
 
 ---
 
-## 📄 Licencia
+## 📄 License
 MIT

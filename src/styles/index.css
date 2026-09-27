@@ -1,3 +1,8 @@
+/**
+ * pwa-ui-core: Complete Stylesheet Bundle
+ * Aggregates design tokens, base reset, components, and layout utilities.
+ */
+
 @import "./tokens.css";
 @import "./reset.css";
 @import "./components.css";

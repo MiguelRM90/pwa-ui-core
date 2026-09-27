@@ -12,6 +12,7 @@ import { ToastMessage } from '../../models/toast.model';
     <div class="pwa-toast-container" aria-live="polite">
       @for (toast of toastService.toasts(); track toast.id) {
         <div class="pwa-toast" [ngClass]="getToastVariantClass(toast)">
+          <!-- Status Icon -->
           <div class="pwa-toast__icon">
             @if (toast.type === 'success') {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -32,6 +33,7 @@ import { ToastMessage } from '../../models/toast.model';
             }
           </div>
 
+          <!-- Content: Title & Message -->
           <div class="pwa-toast__content">
             <h4 class="pwa-toast__title">{{ toast.title }}</h4>
             @if (toast.message) {
@@ -39,11 +41,12 @@ import { ToastMessage } from '../../models/toast.model';
             }
           </div>
 
+          <!-- Dismiss Button -->
           <button
             type="button"
             class="pwa-toast__close"
             (click)="toastService.dismiss(toast.id)"
-            aria-label="Cerrar notificación"
+            aria-label="Close notification"
           >
             ✕
           </button>

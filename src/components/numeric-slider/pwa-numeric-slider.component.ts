@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="pwa-input-group">
+      <!-- Label & Formatted Value Row -->
       <div class="pwa-numeric-slider__top">
         <label class="pwa-label">
           <span>{{ label() }}</span>
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
         </span>
       </div>
 
+      <!-- Numeric Input with Prefix / Suffix -->
       <div class="pwa-numeric-slider__input-wrapper">
         @if (prefix()) {
           <span class="pwa-numeric-slider__affix pwa-numeric-slider__affix--prefix">{{ prefix() }}</span>
@@ -43,6 +45,7 @@ import { FormsModule } from '@angular/forms';
         }
       </div>
 
+      <!-- Range Slider -->
       @if (showSlider()) {
         <div class="pwa-numeric-slider__slider-row">
           <input
@@ -131,6 +134,7 @@ export class PwaNumericSliderComponent {
   readonly suffix = input<string>('');
   readonly hint = input<string>('');
   readonly showSlider = input<boolean>(true);
+  readonly locale = input<string>('es-ES');
 
   readonly valueChange = output<number>();
 
@@ -153,7 +157,7 @@ export class PwaNumericSliderComponent {
   formattedDisplay(): string {
     const val = this.value() || 0;
     if (this.unit() === '€') {
-      return new Intl.NumberFormat('es-ES', {
+      return new Intl.NumberFormat(this.locale(), {
         style: 'currency',
         currency: 'EUR',
         maximumFractionDigits: 0,
@@ -167,13 +171,13 @@ export class PwaNumericSliderComponent {
 
   minDisplay(): string {
     return this.unit() === '€'
-      ? `${this.min().toLocaleString('es-ES')} €`
+      ? `${this.min().toLocaleString(this.locale())} €`
       : `${this.min()} ${this.unit()}`.trim();
   }
 
   maxDisplay(): string {
     return this.unit() === '€'
-      ? `${this.max().toLocaleString('es-ES')} €`
+      ? `${this.max().toLocaleString(this.locale())} €`
       : `${this.max()} ${this.unit()}`.trim();
   }
 }

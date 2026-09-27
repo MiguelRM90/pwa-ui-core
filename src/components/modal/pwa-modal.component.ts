@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
         tabindex="-1"
       >
         <div class="pwa-modal" [style.max-width]="maxWidth()" (click)="$event.stopPropagation()">
-          <!-- Cabecera del Modal -->
+          <!-- Modal Header -->
           <header class="pwa-modal__header">
             <div class="pwa-modal__title-box">
               <ng-content select="[modal-icon]"></ng-content>
@@ -34,7 +34,7 @@ import { CommonModule } from '@angular/common';
               type="button"
               class="pwa-btn pwa-btn--ghost pwa-btn--icon"
               (click)="close.emit()"
-              aria-label="Cerrar ventana emergente"
+              aria-label="Close dialog"
             >
               <svg class="pwa-modal__close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -42,12 +42,12 @@ import { CommonModule } from '@angular/common';
             </button>
           </header>
 
-          <!-- Cuerpo Scrollable -->
+          <!-- Scrollable Body -->
           <div class="pwa-modal__body">
             <ng-content></ng-content>
           </div>
 
-          <!-- Pie del Modal -->
+          <!-- Modal Footer -->
           <footer class="pwa-modal__footer">
             <ng-content select="[modal-footer]"></ng-content>
           </footer>

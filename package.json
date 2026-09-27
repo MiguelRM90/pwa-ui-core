@@ -1,7 +1,7 @@
 {
   "name": "pwa-ui-core",
   "version": "1.0.0",
-  "description": "Librería centralizada de estilos nativos CSS, tokens y componentes Standalone para PWAs",
+  "description": "Centralized native CSS design tokens, semantic styles, and Standalone Angular UI components for PWAs",
   "author": "MiguelRM90",
   "license": "MIT",
   "type": "module",
@@ -55,4 +55,3 @@
     "typescript": "~6.0.2"
   }
 }
-
