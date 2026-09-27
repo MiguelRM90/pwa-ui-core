@@ -1,0 +1,146 @@
+/**
+ * pwa-ui-core: Design Tokens
+ * Variables CSS nativas para aplicaciones web progresivas (PWA).
+ * Soporta light-dark() nativo y clases/atributos de tema (.dark, [data-theme="dark"]).
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* --- 1. Rampa de Neutros (Base Slate) --- */
+  --pwa-slate-50: #f8fafc;
+  --pwa-slate-100: #f1f5f9;
+  --pwa-slate-200: #e2e8f0;
+  --pwa-slate-300: #cbd5e1;
+  --pwa-slate-400: #94a3b8;
+  --pwa-slate-500: #64748b;
+  --pwa-slate-600: #475569;
+  --pwa-slate-700: #334155;
+  --pwa-slate-800: #1e293b;
+  --pwa-slate-900: #0f172a;
+  --pwa-slate-950: #020617;
+
+  /* --- 2. Semántica de Superficies y Fondos --- */
+  --pwa-bg-canvas: light-dark(var(--pwa-slate-50), var(--pwa-slate-950));
+  --pwa-bg-surface: light-dark(#ffffff, var(--pwa-slate-900));
+  --pwa-bg-card: light-dark(#ffffff, var(--pwa-slate-900));
+  --pwa-bg-card-hover: light-dark(var(--pwa-slate-100), #162032);
+  --pwa-bg-subtle: light-dark(var(--pwa-slate-100), var(--pwa-slate-800));
+  --pwa-bg-input: light-dark(var(--pwa-slate-100), var(--pwa-slate-800));
+  --pwa-bg-backdrop: light-dark(rgba(15, 23, 42, 0.5), rgba(2, 6, 23, 0.75));
+
+  /* --- 3. Tipografía y Colores de Texto --- */
+  --pwa-text-primary: light-dark(var(--pwa-slate-900), var(--pwa-slate-50));
+  --pwa-text-secondary: light-dark(var(--pwa-slate-600), var(--pwa-slate-400));
+  --pwa-text-muted: light-dark(var(--pwa-slate-400), var(--pwa-slate-500));
+  --pwa-text-inverse: light-dark(#ffffff, var(--pwa-slate-950));
+
+  /* --- 4. Bordes y Divisores --- */
+  --pwa-border: light-dark(var(--pwa-slate-200), var(--pwa-slate-800));
+  --pwa-border-strong: light-dark(var(--pwa-slate-300), var(--pwa-slate-700));
+  --pwa-border-subtle: light-dark(var(--pwa-slate-100), var(--pwa-slate-800));
+
+  /* --- 5. Color de Marca / Acento (Sobrescribible por App) --- */
+  --pwa-brand-500: #0284c7;
+  --pwa-brand-600: #0369a1;
+  --pwa-brand-soft: light-dark(rgba(2, 132, 199, 0.1), rgba(2, 132, 199, 0.2));
+  --pwa-brand-text: light-dark(#0369a1, #38bdf8);
+  --pwa-brand-contrast: #ffffff;
+
+  /* --- 6. Estados de Feedback Semántico --- */
+  --pwa-success: #10b981;
+  --pwa-success-soft: light-dark(rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.2));
+  --pwa-success-text: light-dark(#047857, #34d399);
+
+  --pwa-warning: #f59e0b;
+  --pwa-warning-soft: light-dark(rgba(245, 158, 11, 0.12), rgba(245, 158, 11, 0.2));
+  --pwa-warning-text: light-dark(#b45309, #fbbf24);
+
+  --pwa-danger: #f43f5e;
+  --pwa-danger-soft: light-dark(rgba(244, 63, 94, 0.12), rgba(244, 63, 94, 0.2));
+  --pwa-danger-text: light-dark(#be123c, #fb7185);
+
+  --pwa-info: #0284c7;
+  --pwa-info-soft: light-dark(rgba(2, 132, 199, 0.12), rgba(2, 132, 199, 0.2));
+  --pwa-info-text: light-dark(#0369a1, #38bdf8);
+
+  /* --- 7. Fuentes y Escala Tipográfica --- */
+  --pwa-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --pwa-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --pwa-font-features: "cv02", "cv03", "cv04", "cv11", "tnum";
+
+  --pwa-text-2xs: 0.6875rem; /* 11px */
+  --pwa-text-xs: 0.75rem;    /* 12px */
+  --pwa-text-sm: 0.875rem;   /* 14px */
+  --pwa-text-base: 1rem;     /* 16px */
+  --pwa-text-lg: 1.125rem;   /* 18px */
+  --pwa-text-xl: 1.25rem;    /* 20px */
+  --pwa-text-2xl: 1.5rem;    /* 24px */
+  --pwa-text-3xl: 1.875rem;  /* 30px */
+  --pwa-text-4xl: 2.25rem;   /* 36px */
+
+  /* --- 8. Radios de Borde (Border Radius) --- */
+  --pwa-radius-sm: 8px;
+  --pwa-radius-md: 12px;
+  --pwa-radius-lg: 16px;
+  --pwa-radius-xl: 24px;
+  --pwa-radius-full: 9999px;
+
+  /* --- 9. Sombras y Elevaciones --- */
+  --pwa-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --pwa-shadow-md: light-dark(
+    0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 4px 20px -2px rgba(0, 0, 0, 0.5)
+  );
+  --pwa-shadow-xl: light-dark(
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 25px 50px -12px rgba(0, 0, 0, 0.7)
+  );
+
+  --pwa-border-glow: light-dark(none, 0 0 0 1px rgba(255, 255, 255, 0.05));
+  --pwa-transition-tactile: transform 0.1s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+[data-theme="dark"],
+.dark {
+  color-scheme: dark;
+  --pwa-bg-canvas: var(--pwa-slate-950);
+  --pwa-bg-surface: var(--pwa-slate-900);
+  --pwa-bg-card: var(--pwa-slate-900);
+  --pwa-bg-card-hover: #162032;
+  --pwa-bg-subtle: var(--pwa-slate-800);
+  --pwa-bg-input: var(--pwa-slate-800);
+  --pwa-bg-backdrop: rgba(2, 6, 23, 0.75);
+  --pwa-text-primary: var(--pwa-slate-50);
+  --pwa-text-secondary: var(--pwa-slate-400);
+  --pwa-text-muted: var(--pwa-slate-500);
+  --pwa-text-inverse: var(--pwa-slate-950);
+  --pwa-border: var(--pwa-slate-800);
+  --pwa-border-strong: var(--pwa-slate-700);
+  --pwa-border-subtle: var(--pwa-slate-800);
+  --pwa-shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --pwa-shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  --pwa-border-glow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"],
+.light {
+  color-scheme: light;
+  --pwa-bg-canvas: var(--pwa-slate-50);
+  --pwa-bg-surface: #ffffff;
+  --pwa-bg-card: #ffffff;
+  --pwa-bg-card-hover: var(--pwa-slate-100);
+  --pwa-bg-subtle: var(--pwa-slate-100);
+  --pwa-bg-input: var(--pwa-slate-100);
+  --pwa-bg-backdrop: rgba(15, 23, 42, 0.5);
+  --pwa-text-primary: var(--pwa-slate-900);
+  --pwa-text-secondary: var(--pwa-slate-600);
+  --pwa-text-muted: var(--pwa-slate-400);
+  --pwa-text-inverse: #ffffff;
+  --pwa-border: var(--pwa-slate-200);
+  --pwa-border-strong: var(--pwa-slate-300);
+  --pwa-border-subtle: var(--pwa-slate-100);
+  --pwa-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --pwa-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --pwa-border-glow: none;
+}

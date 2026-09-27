@@ -1,0 +1,58 @@
+{
+  "name": "pwa-ui-core",
+  "version": "1.0.0",
+  "description": "Librería centralizada de estilos nativos CSS, tokens y componentes Standalone para PWAs",
+  "author": "MiguelRM90",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./tokens": "./src/styles/tokens.css",
+    "./styles": "./src/styles/index.css",
+    "./styles/reset": "./src/styles/reset.css",
+    "./styles/components": "./src/styles/components.css",
+    "./styles/utilities": "./src/styles/utilities.css",
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js",
+      "default": "./dist/components/index.js"
+    },
+    "./services": {
+      "types": "./dist/services/index.d.ts",
+      "import": "./dist/services/index.js",
+      "default": "./dist/services/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src/styles",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "typecheck": "tsc --noEmit -p tsconfig.lib.json"
+  },
+  "peerDependencies": {
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/forms": "^22.0.0",
+    "@angular/service-worker": "^22.0.0",
+    "rxjs": "~7.8.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/service-worker": "^22.2.0",
+    "rxjs": "~7.8.0",
+    "typescript": "~6.0.2"
+  }
+}
+

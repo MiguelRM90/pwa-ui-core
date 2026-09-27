@@ -1,0 +1,116 @@
+/**
+ * pwa-ui-core: Utilidades de Maquetación y Animaciones
+ */
+
+.pwa-container {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .pwa-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.pwa-container--narrow {
+  max-width: 38rem; /* 608px */
+}
+
+.pwa-grid-kpis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .pwa-grid-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pwa-grid-kpis {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pwa-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .pwa-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes pwa-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pwa-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes pwa-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pwa-animate-fade-in {
+  animation: pwa-fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pwa-animate-spin {
+  animation: pwa-spin 1s linear infinite;
+}
+
+.pwa-animate-pulse {
+  animation: pwa-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pwa-tactile {
+  transition: var(--pwa-transition-tactile);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pwa-tactile:active {
+  transform: scale(0.97);
+}
+
+.pwa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
