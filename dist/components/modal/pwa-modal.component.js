@@ -90,58 +90,10 @@ export class PwaModalComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaModalComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-modal', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    @if (isOpen()) {
-      <div
-        class="pwa-modal-backdrop"
-        (click)="onBackdropClick($event)"
-        role="dialog"
-        aria-modal="true"
-        [attr.aria-label]="title()"
-        tabindex="-1"
-      >
-        <div class="pwa-modal" [style.max-width]="maxWidth()" (click)="$event.stopPropagation()">
-          <!-- Modal Header -->
-          <header class="pwa-modal__header">
-            <div class="pwa-modal__title-box">
-              <ng-content select="[modal-icon]"></ng-content>
-              <div>
-                @if (title()) {
-                  <h2 class="pwa-modal__title">{{ title() }}</h2>
-                }
-                @if (subtitle()) {
-                  <p class="pwa-modal__subtitle">{{ subtitle() }}</p>
-                }
-              </div>
-            </div>
-            <button
-              type="button"
-              class="pwa-btn pwa-btn--ghost pwa-btn--icon"
-              (click)="close.emit()"
-              aria-label="Close dialog"
-            >
-              <svg class="pwa-modal__close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </header>
-
-          <!-- Scrollable Body -->
-          <div class="pwa-modal__body">
-            <ng-content></ng-content>
-          </div>
-
-          <!-- Modal Footer -->
-          <footer class="pwa-modal__footer">
-            <ng-content select="[modal-footer]"></ng-content>
-          </footer>
-        </div>
-      </div>
-    }
-  `, styles: ["\n    :host {\n      display: contents;\n    }\n    .pwa-modal-backdrop {\n      position: fixed;\n      inset: 0;\n      z-index: 50;\n      background-color: var(--pwa-bg-backdrop);\n      backdrop-filter: blur(4px);\n      -webkit-backdrop-filter: blur(4px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 1rem;\n      animation: pwa-fade-in 0.15s ease-out;\n    }\n    .pwa-modal {\n      width: 100%;\n      max-height: 92vh;\n      display: flex;\n      flex-direction: column;\n      background-color: var(--pwa-bg-surface);\n      border: 1px solid var(--pwa-border);\n      border-radius: var(--pwa-radius-xl);\n      box-shadow: var(--pwa-shadow-xl), var(--pwa-border-glow);\n      overflow: hidden;\n    }\n    .pwa-modal__header {\n      padding: 1.25rem 1.5rem;\n      border-bottom: 1px solid var(--pwa-border);\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1rem;\n      flex-shrink: 0;\n      background-color: color-mix(in srgb, var(--pwa-bg-surface) 95%, transparent);\n    }\n    .pwa-modal__title-box {\n      display: flex;\n      align-items: center;\n      gap: 0.75rem;\n      min-width: 0;\n    }\n    .pwa-modal__title {\n      margin: 0;\n      font-size: var(--pwa-text-base);\n      font-weight: 700;\n      color: var(--pwa-text-primary);\n    }\n    .pwa-modal__subtitle {\n      margin: 0.25rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n    }\n    .pwa-modal__close-icon {\n      width: 1.125rem;\n      height: 1.125rem;\n    }\n    .pwa-modal__body {\n      padding: 1.5rem;\n      overflow-y: auto;\n      flex: 1;\n    }\n    .pwa-modal__footer {\n      padding: 1rem 1.5rem;\n      border-top: 1px solid var(--pwa-border);\n      display: flex;\n      align-items: center;\n      justify-content: flex-end;\n      gap: 0.75rem;\n      flex-shrink: 0;\n      background-color: var(--pwa-bg-subtle);\n    }\n    .pwa-modal__footer:empty {\n      display: none;\n    }\n  "] }]
+        args: [{ selector: 'pwa-modal', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "@if (isOpen()) {\n  <div\n    class=\"pwa-modal-backdrop\"\n    (click)=\"onBackdropClick($event)\"\n    role=\"dialog\"\n    aria-modal=\"true\"\n    [attr.aria-label]=\"title()\"\n    tabindex=\"-1\"\n  >\n    <div class=\"pwa-modal\" [style.max-width]=\"maxWidth()\" (click)=\"$event.stopPropagation()\">\n      <!-- Modal Header -->\n      <header class=\"pwa-modal__header\">\n        <div class=\"pwa-modal__title-box\">\n          <ng-content select=\"[modal-icon]\"></ng-content>\n          <div>\n            @if (title()) {\n              <h2 class=\"pwa-modal__title\">{{ title() }}</h2>\n            }\n            @if (subtitle()) {\n              <p class=\"pwa-modal__subtitle\">{{ subtitle() }}</p>\n            }\n          </div>\n        </div>\n        <button\n          type=\"button\"\n          class=\"pwa-btn pwa-btn--ghost pwa-btn--icon\"\n          (click)=\"close.emit()\"\n          aria-label=\"Close dialog\"\n        >\n          <svg class=\"pwa-modal__close-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n          </svg>\n        </button>\n      </header>\n\n      <!-- Scrollable Body -->\n      <div class=\"pwa-modal__body\">\n        <ng-content></ng-content>\n      </div>\n\n      <!-- Modal Footer -->\n      <footer class=\"pwa-modal__footer\">\n        <ng-content select=\"[modal-footer]\"></ng-content>\n      </footer>\n    </div>\n  </div>\n}\n", styles: ["\n    :host {\n      display: contents;\n    }\n    .pwa-modal-backdrop {\n      position: fixed;\n      inset: 0;\n      z-index: 50;\n      background-color: var(--pwa-bg-backdrop);\n      backdrop-filter: blur(4px);\n      -webkit-backdrop-filter: blur(4px);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 1rem;\n      animation: pwa-fade-in 0.15s ease-out;\n    }\n    .pwa-modal {\n      width: 100%;\n      max-height: 92vh;\n      display: flex;\n      flex-direction: column;\n      background-color: var(--pwa-bg-surface);\n      border: 1px solid var(--pwa-border);\n      border-radius: var(--pwa-radius-xl);\n      box-shadow: var(--pwa-shadow-xl), var(--pwa-border-glow);\n      overflow: hidden;\n    }\n    .pwa-modal__header {\n      padding: 1.25rem 1.5rem;\n      border-bottom: 1px solid var(--pwa-border);\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 1rem;\n      flex-shrink: 0;\n      background-color: color-mix(in srgb, var(--pwa-bg-surface) 95%, transparent);\n    }\n    .pwa-modal__title-box {\n      display: flex;\n      align-items: center;\n      gap: 0.75rem;\n      min-width: 0;\n    }\n    .pwa-modal__title {\n      margin: 0;\n      font-size: var(--pwa-text-base);\n      font-weight: 700;\n      color: var(--pwa-text-primary);\n    }\n    .pwa-modal__subtitle {\n      margin: 0.25rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n    }\n    .pwa-modal__close-icon {\n      width: 1.125rem;\n      height: 1.125rem;\n    }\n    .pwa-modal__body {\n      padding: 1.5rem;\n      overflow-y: auto;\n      flex: 1;\n    }\n    .pwa-modal__footer {\n      padding: 1rem 1.5rem;\n      border-top: 1px solid var(--pwa-border);\n      display: flex;\n      align-items: center;\n      justify-content: flex-end;\n      gap: 0.75rem;\n      flex-shrink: 0;\n      background-color: var(--pwa-bg-subtle);\n    }\n    .pwa-modal__footer:empty {\n      display: none;\n    }\n  "] }]
     }], null, { isOpen: [{ type: i0.Input, args: [{ isSignal: true, alias: "isOpen", required: false }] }], title: [{ type: i0.Input, args: [{ isSignal: true, alias: "title", required: false }] }], subtitle: [{ type: i0.Input, args: [{ isSignal: true, alias: "subtitle", required: false }] }], maxWidth: [{ type: i0.Input, args: [{ isSignal: true, alias: "maxWidth", required: false }] }], closeOnBackdrop: [{ type: i0.Input, args: [{ isSignal: true, alias: "closeOnBackdrop", required: false }] }], close: [{ type: i0.Output, args: ["close"] }], onEscape: [{
             type: HostListener,
             args: ['window:keydown.escape']
         }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaModalComponent, { className: "PwaModalComponent", filePath: "components/modal/pwa-modal.component.ts", lineNumber: 137 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaModalComponent, { className: "PwaModalComponent", filePath: "components/modal/pwa-modal.component.ts", lineNumber: 89 }); })();
 //# sourceMappingURL=pwa-modal.component.js.map

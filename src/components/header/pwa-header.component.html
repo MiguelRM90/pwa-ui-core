@@ -1,0 +1,61 @@
+<header class="pwa-header">
+  <!-- PWA Update Banner -->
+  @if (showUpdateBanner() && pwa.hasUpdate()) {
+    <div class="pwa-header__banner">
+      <span>{{ updateMessage() }}</span>
+      <button type="button" class="pwa-btn pwa-btn--primary pwa-btn--sm" (click)="pwa.applyUpdate()">
+        {{ updateButtonText() }}
+      </button>
+    </div>
+  }
+
+  <div class="pwa-container pwa-header__inner">
+    <!-- Logo and Branding -->
+    <div class="pwa-header__brand">
+      <ng-content select="[header-logo]"></ng-content>
+      <div class="pwa-header__titles">
+        <div class="pwa-header__title-row">
+          <h1 class="pwa-header__title">{{ title() }}</h1>
+          @if (badgeText()) {
+            <span class="pwa-badge pwa-badge--info">{{ badgeText() }}</span>
+          }
+        </div>
+        @if (subtitle()) {
+          <p class="pwa-header__subtitle">{{ subtitle() }}</p>
+        }
+      </div>
+    </div>
+
+    <!-- Right Side Actions & Indicators -->
+    <div class="pwa-header__actions">
+      <!-- Online/Offline Network Status -->
+      @if (showNetworkStatus()) {
+        <div
+          class="pwa-badge"
+          [ngClass]="pwa.isOnline() ? 'pwa-badge--success' : 'pwa-badge--danger'"
+          [title]="pwa.isOnline() ? 'Connected to internet' : 'Offline mode - Local data storage active'"
+        >
+          <span class="pwa-badge-dot" [class.pwa-badge-dot--pulse]="pwa.isOnline()"></span>
+          <span class="pwa-header__network-text">{{ pwa.isOnline() ? 'Online' : 'Offline' }}</span>
+        </div>
+      }
+
+      <!-- PWA Installation Button -->
+      @if (showInstallButton() && pwa.canInstall()) {
+        <button
+          type="button"
+          class="pwa-btn pwa-btn--primary pwa-btn--sm"
+          (click)="onInstallPrompt()"
+          title="Install app to your home screen"
+        >
+          <svg class="pwa-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span class="pwa-header__btn-label">{{ installButtonText() }}</span>
+        </button>
+      }
+
+      <ng-content select="[header-actions]"></ng-content>
+    </div>
+  </div>
+</header>

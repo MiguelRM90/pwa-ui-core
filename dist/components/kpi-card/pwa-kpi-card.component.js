@@ -60,29 +60,7 @@ export class PwaKpiCardComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaKpiCardComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-kpi-card', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    <div class="pwa-card pwa-kpi-card">
-      <div class="pwa-kpi-card__top">
-        <span class="pwa-kpi-card__label">{{ label() }}</span>
-        <ng-content select="[kpi-badge], [kpi-icon]"></ng-content>
-      </div>
-
-      <div class="pwa-kpi-card__main">
-        <span class="pwa-kpi-card__value">{{ value() }}</span>
-        @if (unit()) {
-          <span class="pwa-kpi-card__unit">{{ unit() }}</span>
-        }
-      </div>
-
-      @if (description()) {
-        <p class="pwa-kpi-card__desc">{{ description() }}</p>
-      }
-
-      <div class="pwa-kpi-card__footer">
-        <ng-content select="[kpi-footer]"></ng-content>
-      </div>
-    </div>
-  `, styles: ["\n    :host {\n      display: block;\n    }\n    .pwa-kpi-card {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      height: 100%;\n    }\n    .pwa-kpi-card__top {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 0.5rem;\n      margin-bottom: 0.5rem;\n    }\n    .pwa-kpi-card__label {\n      font-size: var(--pwa-text-xs);\n      font-weight: 700;\n      text-transform: uppercase;\n      letter-spacing: 0.05em;\n      color: var(--pwa-text-secondary);\n    }\n    .pwa-kpi-card__main {\n      display: flex;\n      align-items: baseline;\n      gap: 0.375rem;\n      margin: 0.25rem 0;\n      flex-wrap: wrap;\n    }\n    .pwa-kpi-card__value {\n      font-size: var(--pwa-text-3xl);\n      font-weight: 900;\n      color: var(--pwa-text-primary);\n      letter-spacing: -0.03em;\n      font-feature-settings: var(--pwa-font-features);\n      line-height: 1.1;\n    }\n    .pwa-kpi-card__unit {\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-muted);\n      font-weight: 600;\n    }\n    .pwa-kpi-card__desc {\n      margin: 0.375rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      line-height: 1.4;\n    }\n    .pwa-kpi-card__footer:not(:empty) {\n      margin-top: 0.75rem;\n      padding-top: 0.75rem;\n      border-top: 1px solid var(--pwa-border);\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n    }\n  "] }]
+        args: [{ selector: 'pwa-kpi-card', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "<div class=\"pwa-card pwa-kpi-card\">\n  <div class=\"pwa-kpi-card__top\">\n    <span class=\"pwa-kpi-card__label\">{{ label() }}</span>\n    <ng-content select=\"[kpi-badge], [kpi-icon]\"></ng-content>\n  </div>\n\n  <div class=\"pwa-kpi-card__main\">\n    <span class=\"pwa-kpi-card__value\">{{ value() }}</span>\n    @if (unit()) {\n      <span class=\"pwa-kpi-card__unit\">{{ unit() }}</span>\n    }\n  </div>\n\n  @if (description()) {\n    <p class=\"pwa-kpi-card__desc\">{{ description() }}</p>\n  }\n\n  <div class=\"pwa-kpi-card__footer\">\n    <ng-content select=\"[kpi-footer]\"></ng-content>\n  </div>\n</div>\n", styles: ["\n    :host {\n      display: block;\n    }\n    .pwa-kpi-card {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      height: 100%;\n    }\n    .pwa-kpi-card__top {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 0.5rem;\n      margin-bottom: 0.5rem;\n    }\n    .pwa-kpi-card__label {\n      font-size: var(--pwa-text-xs);\n      font-weight: 700;\n      text-transform: uppercase;\n      letter-spacing: 0.05em;\n      color: var(--pwa-text-secondary);\n    }\n    .pwa-kpi-card__main {\n      display: flex;\n      align-items: baseline;\n      gap: 0.375rem;\n      margin: 0.25rem 0;\n      flex-wrap: wrap;\n    }\n    .pwa-kpi-card__value {\n      font-size: var(--pwa-text-3xl);\n      font-weight: 900;\n      color: var(--pwa-text-primary);\n      letter-spacing: -0.03em;\n      font-feature-settings: var(--pwa-font-features);\n      line-height: 1.1;\n    }\n    .pwa-kpi-card__unit {\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-muted);\n      font-weight: 600;\n    }\n    .pwa-kpi-card__desc {\n      margin: 0.375rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      line-height: 1.4;\n    }\n    .pwa-kpi-card__footer:not(:empty) {\n      margin-top: 0.75rem;\n      padding-top: 0.75rem;\n      border-top: 1px solid var(--pwa-border);\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n    }\n  "] }]
     }], null, { label: [{ type: i0.Input, args: [{ isSignal: true, alias: "label", required: true }] }], value: [{ type: i0.Input, args: [{ isSignal: true, alias: "value", required: true }] }], unit: [{ type: i0.Input, args: [{ isSignal: true, alias: "unit", required: false }] }], description: [{ type: i0.Input, args: [{ isSignal: true, alias: "description", required: false }] }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaKpiCardComponent, { className: "PwaKpiCardComponent", filePath: "components/kpi-card/pwa-kpi-card.component.ts", lineNumber: 91 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaKpiCardComponent, { className: "PwaKpiCardComponent", filePath: "components/kpi-card/pwa-kpi-card.component.ts", lineNumber: 69 }); })();
 //# sourceMappingURL=pwa-kpi-card.component.js.map

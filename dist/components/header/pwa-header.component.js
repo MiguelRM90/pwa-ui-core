@@ -131,69 +131,7 @@ export class PwaHeaderComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaHeaderComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-header', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    <header class="pwa-header">
-      <!-- PWA Update Banner -->
-      @if (showUpdateBanner() && pwa.hasUpdate()) {
-        <div class="pwa-header__banner">
-          <span>{{ updateMessage() }}</span>
-          <button type="button" class="pwa-btn pwa-btn--primary pwa-btn--sm" (click)="pwa.applyUpdate()">
-            {{ updateButtonText() }}
-          </button>
-        </div>
-      }
-
-      <div class="pwa-container pwa-header__inner">
-        <!-- Logo and Branding -->
-        <div class="pwa-header__brand">
-          <ng-content select="[header-logo]"></ng-content>
-          <div class="pwa-header__titles">
-            <div class="pwa-header__title-row">
-              <h1 class="pwa-header__title">{{ title() }}</h1>
-              @if (badgeText()) {
-                <span class="pwa-badge pwa-badge--info">{{ badgeText() }}</span>
-              }
-            </div>
-            @if (subtitle()) {
-              <p class="pwa-header__subtitle">{{ subtitle() }}</p>
-            }
-          </div>
-        </div>
-
-        <!-- Right Side Actions & Indicators -->
-        <div class="pwa-header__actions">
-          <!-- Online/Offline Network Status -->
-          @if (showNetworkStatus()) {
-            <div
-              class="pwa-badge"
-              [ngClass]="pwa.isOnline() ? 'pwa-badge--success' : 'pwa-badge--danger'"
-              [title]="pwa.isOnline() ? 'Connected to internet' : 'Offline mode - Local data storage active'"
-            >
-              <span class="pwa-badge-dot" [class.pwa-badge-dot--pulse]="pwa.isOnline()"></span>
-              <span class="pwa-header__network-text">{{ pwa.isOnline() ? 'Online' : 'Offline' }}</span>
-            </div>
-          }
-
-          <!-- PWA Installation Button -->
-          @if (showInstallButton() && pwa.canInstall()) {
-            <button
-              type="button"
-              class="pwa-btn pwa-btn--primary pwa-btn--sm"
-              (click)="onInstallPrompt()"
-              title="Install app to your home screen"
-            >
-              <svg class="pwa-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              <span class="pwa-header__btn-label">{{ installButtonText() }}</span>
-            </button>
-          }
-
-          <ng-content select="[header-actions]"></ng-content>
-        </div>
-      </div>
-    </header>
-  `, styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-header {\n      position: sticky;\n      top: 0;\n      z-index: 40;\n      background-color: color-mix(in srgb, var(--pwa-bg-surface) 88%, transparent);\n      backdrop-filter: blur(12px);\n      -webkit-backdrop-filter: blur(12px);\n      border-bottom: 1px solid var(--pwa-border);\n      transition: background-color 0.2s ease, border-color 0.2s ease;\n    }\n    .pwa-header__banner {\n      background-color: var(--pwa-brand-600);\n      color: #ffffff;\n      padding: 0.5rem 1rem;\n      font-size: var(--pwa-text-xs);\n      font-weight: 500;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.75rem;\n    }\n    .pwa-header__inner {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      height: 4rem;\n      gap: 1rem;\n    }\n    .pwa-header__brand {\n      display: flex;\n      align-items: center;\n      gap: 0.75rem;\n      min-width: 0;\n    }\n    .pwa-header__titles {\n      display: flex;\n      flex-direction: column;\n      min-width: 0;\n    }\n    .pwa-header__title-row {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n    }\n    .pwa-header__title {\n      margin: 0;\n      font-size: var(--pwa-text-base);\n      font-weight: 800;\n      color: var(--pwa-text-primary);\n      letter-spacing: -0.02em;\n      white-space: nowrap;\n    }\n    .pwa-header__subtitle {\n      margin: 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      white-space: nowrap;\n      overflow: hidden;\n      text-overflow: ellipsis;\n    }\n    .pwa-header__actions {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n      flex-shrink: 0;\n    }\n    .pwa-header__icon {\n      width: 1rem;\n      height: 1rem;\n    }\n    @media (max-width: 640px) {\n      .pwa-header__subtitle,\n      .pwa-header__btn-label,\n      .pwa-header__network-text {\n        display: none;\n      }\n    }\n  "] }]
+        args: [{ selector: 'pwa-header', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "<header class=\"pwa-header\">\n  <!-- PWA Update Banner -->\n  @if (showUpdateBanner() && pwa.hasUpdate()) {\n    <div class=\"pwa-header__banner\">\n      <span>{{ updateMessage() }}</span>\n      <button type=\"button\" class=\"pwa-btn pwa-btn--primary pwa-btn--sm\" (click)=\"pwa.applyUpdate()\">\n        {{ updateButtonText() }}\n      </button>\n    </div>\n  }\n\n  <div class=\"pwa-container pwa-header__inner\">\n    <!-- Logo and Branding -->\n    <div class=\"pwa-header__brand\">\n      <ng-content select=\"[header-logo]\"></ng-content>\n      <div class=\"pwa-header__titles\">\n        <div class=\"pwa-header__title-row\">\n          <h1 class=\"pwa-header__title\">{{ title() }}</h1>\n          @if (badgeText()) {\n            <span class=\"pwa-badge pwa-badge--info\">{{ badgeText() }}</span>\n          }\n        </div>\n        @if (subtitle()) {\n          <p class=\"pwa-header__subtitle\">{{ subtitle() }}</p>\n        }\n      </div>\n    </div>\n\n    <!-- Right Side Actions & Indicators -->\n    <div class=\"pwa-header__actions\">\n      <!-- Online/Offline Network Status -->\n      @if (showNetworkStatus()) {\n        <div\n          class=\"pwa-badge\"\n          [ngClass]=\"pwa.isOnline() ? 'pwa-badge--success' : 'pwa-badge--danger'\"\n          [title]=\"pwa.isOnline() ? 'Connected to internet' : 'Offline mode - Local data storage active'\"\n        >\n          <span class=\"pwa-badge-dot\" [class.pwa-badge-dot--pulse]=\"pwa.isOnline()\"></span>\n          <span class=\"pwa-header__network-text\">{{ pwa.isOnline() ? 'Online' : 'Offline' }}</span>\n        </div>\n      }\n\n      <!-- PWA Installation Button -->\n      @if (showInstallButton() && pwa.canInstall()) {\n        <button\n          type=\"button\"\n          class=\"pwa-btn pwa-btn--primary pwa-btn--sm\"\n          (click)=\"onInstallPrompt()\"\n          title=\"Install app to your home screen\"\n        >\n          <svg class=\"pwa-header__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\" />\n          </svg>\n          <span class=\"pwa-header__btn-label\">{{ installButtonText() }}</span>\n        </button>\n      }\n\n      <ng-content select=\"[header-actions]\"></ng-content>\n    </div>\n  </div>\n</header>\n", styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-header {\n      position: sticky;\n      top: 0;\n      z-index: 40;\n      background-color: color-mix(in srgb, var(--pwa-bg-surface) 88%, transparent);\n      backdrop-filter: blur(12px);\n      -webkit-backdrop-filter: blur(12px);\n      border-bottom: 1px solid var(--pwa-border);\n      transition: background-color 0.2s ease, border-color 0.2s ease;\n    }\n    .pwa-header__banner {\n      background-color: var(--pwa-brand-600);\n      color: #ffffff;\n      padding: 0.5rem 1rem;\n      font-size: var(--pwa-text-xs);\n      font-weight: 500;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.75rem;\n    }\n    .pwa-header__inner {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      height: 4rem;\n      gap: 1rem;\n    }\n    .pwa-header__brand {\n      display: flex;\n      align-items: center;\n      gap: 0.75rem;\n      min-width: 0;\n    }\n    .pwa-header__titles {\n      display: flex;\n      flex-direction: column;\n      min-width: 0;\n    }\n    .pwa-header__title-row {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n    }\n    .pwa-header__title {\n      margin: 0;\n      font-size: var(--pwa-text-base);\n      font-weight: 800;\n      color: var(--pwa-text-primary);\n      letter-spacing: -0.02em;\n      white-space: nowrap;\n    }\n    .pwa-header__subtitle {\n      margin: 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      white-space: nowrap;\n      overflow: hidden;\n      text-overflow: ellipsis;\n    }\n    .pwa-header__actions {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n      flex-shrink: 0;\n    }\n    .pwa-header__icon {\n      width: 1rem;\n      height: 1rem;\n    }\n    @media (max-width: 640px) {\n      .pwa-header__subtitle,\n      .pwa-header__btn-label,\n      .pwa-header__network-text {\n        display: none;\n      }\n    }\n  "] }]
     }], null, { title: [{ type: i0.Input, args: [{ isSignal: true, alias: "title", required: true }] }], subtitle: [{ type: i0.Input, args: [{ isSignal: true, alias: "subtitle", required: false }] }], badgeText: [{ type: i0.Input, args: [{ isSignal: true, alias: "badgeText", required: false }] }], showNetworkStatus: [{ type: i0.Input, args: [{ isSignal: true, alias: "showNetworkStatus", required: false }] }], showInstallButton: [{ type: i0.Input, args: [{ isSignal: true, alias: "showInstallButton", required: false }] }], showUpdateBanner: [{ type: i0.Input, args: [{ isSignal: true, alias: "showUpdateBanner", required: false }] }], installButtonText: [{ type: i0.Input, args: [{ isSignal: true, alias: "installButtonText", required: false }] }], updateMessage: [{ type: i0.Input, args: [{ isSignal: true, alias: "updateMessage", required: false }] }], updateButtonText: [{ type: i0.Input, args: [{ isSignal: true, alias: "updateButtonText", required: false }] }], installed: [{ type: i0.Output, args: ["installed"] }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaHeaderComponent, { className: "PwaHeaderComponent", filePath: "components/header/pwa-header.component.ts", lineNumber: 157 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaHeaderComponent, { className: "PwaHeaderComponent", filePath: "components/header/pwa-header.component.ts", lineNumber: 95 }); })();
 //# sourceMappingURL=pwa-header.component.js.map

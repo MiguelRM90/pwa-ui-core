@@ -16,6 +16,6 @@ export declare class PwaService implements OnDestroy {
     applyUpdate(): void;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PwaService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<PwaService>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<any>;
 }
 //# sourceMappingURL=pwa.service.d.ts.map

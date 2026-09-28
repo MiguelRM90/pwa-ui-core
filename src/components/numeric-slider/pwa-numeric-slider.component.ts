@@ -7,64 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <div class="pwa-input-group">
-      <!-- Label & Formatted Value Row -->
-      <div class="pwa-numeric-slider__top">
-        <label class="pwa-label">
-          <span>{{ label() }}</span>
-          @if (hint()) {
-            <span class="pwa-numeric-slider__hint-icon" [title]="hint()">ℹ️</span>
-          }
-        </label>
-        <span class="pwa-numeric-slider__formatted-value">
-          {{ formattedDisplay() }}
-        </span>
-      </div>
-
-      <!-- Numeric Input with Prefix / Suffix -->
-      <div class="pwa-numeric-slider__input-wrapper">
-        @if (prefix()) {
-          <span class="pwa-numeric-slider__affix pwa-numeric-slider__affix--prefix">{{ prefix() }}</span>
-        }
-
-        <input
-          type="number"
-          class="pwa-input"
-          [min]="min()"
-          [max]="max()"
-          [step]="step()"
-          [value]="value()"
-          (input)="onInputChange($event)"
-          [style.padding-left]="prefix() ? '2rem' : null"
-          [style.padding-right]="suffix() ? '2rem' : null"
-        />
-
-        @if (suffix()) {
-          <span class="pwa-numeric-slider__affix pwa-numeric-slider__affix--suffix">{{ suffix() }}</span>
-        }
-      </div>
-
-      <!-- Range Slider -->
-      @if (showSlider()) {
-        <div class="pwa-numeric-slider__slider-row">
-          <input
-            type="range"
-            class="pwa-slider"
-            [min]="min()"
-            [max]="max()"
-            [step]="step()"
-            [value]="value()"
-            (input)="onSliderChange($event)"
-          />
-          <div class="pwa-numeric-slider__min-max">
-            <span>{{ minDisplay() }}</span>
-            <span>{{ maxDisplay() }}</span>
-          </div>
-        </div>
-      }
-    </div>
-  `,
+  templateUrl: './pwa-numeric-slider.component.html',
   styles: [`
     :host {
       display: block;

@@ -79,52 +79,7 @@ export class PwaToastContainerComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaToastContainerComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-toast-container', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    <div class="pwa-toast-container" aria-live="polite">
-      @for (toast of toastService.toasts(); track toast.id) {
-        <div class="pwa-toast" [ngClass]="getToastVariantClass(toast)">
-          <!-- Status Icon -->
-          <div class="pwa-toast__icon">
-            @if (toast.type === 'success') {
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            } @else if (toast.type === 'error') {
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            } @else if (toast.type === 'warning') {
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-              </svg>
-            } @else {
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            }
-          </div>
-
-          <!-- Content: Title & Message -->
-          <div class="pwa-toast__content">
-            <h4 class="pwa-toast__title">{{ toast.title }}</h4>
-            @if (toast.message) {
-              <p class="pwa-toast__message">{{ toast.message }}</p>
-            }
-          </div>
-
-          <!-- Dismiss Button -->
-          <button
-            type="button"
-            class="pwa-toast__close"
-            (click)="toastService.dismiss(toast.id)"
-            aria-label="Close notification"
-          >
-            ✕
-          </button>
-        </div>
-      }
-    </div>
-  `, styles: ["\n    :host {\n      display: contents;\n    }\n    .pwa-toast-container {\n      position: fixed;\n      bottom: 1rem;\n      right: 1rem;\n      z-index: 60;\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n      max-width: 24rem;\n      width: calc(100% - 2rem);\n      pointer-events: none;\n    }\n    .pwa-toast {\n      pointer-events: auto;\n      display: flex;\n      align-items: flex-start;\n      gap: 0.75rem;\n      padding: 0.875rem 1rem;\n      border-radius: var(--pwa-radius-lg);\n      background-color: var(--pwa-bg-surface);\n      border: 1px solid var(--pwa-border);\n      box-shadow: var(--pwa-shadow-xl), var(--pwa-border-glow);\n      backdrop-filter: blur(8px);\n      -webkit-backdrop-filter: blur(8px);\n      animation: pwa-fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);\n    }\n    .pwa-toast--success {\n      border-left: 4px solid var(--pwa-success);\n    }\n    .pwa-toast--success .pwa-toast__icon {\n      color: var(--pwa-success);\n    }\n    .pwa-toast--error {\n      border-left: 4px solid var(--pwa-danger);\n    }\n    .pwa-toast--error .pwa-toast__icon {\n      color: var(--pwa-danger);\n    }\n    .pwa-toast--warning {\n      border-left: 4px solid var(--pwa-warning);\n    }\n    .pwa-toast--warning .pwa-toast__icon {\n      color: var(--pwa-warning);\n    }\n    .pwa-toast--info {\n      border-left: 4px solid var(--pwa-info);\n    }\n    .pwa-toast--info .pwa-toast__icon {\n      color: var(--pwa-info);\n    }\n    .pwa-toast__icon {\n      flex-shrink: 0;\n      width: 1.25rem;\n      height: 1.25rem;\n      margin-top: 0.125rem;\n    }\n    .pwa-toast__content {\n      flex: 1;\n      min-width: 0;\n    }\n    .pwa-toast__title {\n      margin: 0;\n      font-size: var(--pwa-text-sm);\n      font-weight: 700;\n      color: var(--pwa-text-primary);\n    }\n    .pwa-toast__message {\n      margin: 0.25rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      line-height: 1.4;\n      word-break: break-word;\n    }\n    .pwa-toast__close {\n      background: transparent;\n      border: none;\n      color: var(--pwa-text-muted);\n      cursor: pointer;\n      padding: 0.25rem;\n      font-size: 0.875rem;\n      line-height: 1;\n      transition: color 0.15s ease;\n    }\n    .pwa-toast__close:hover {\n      color: var(--pwa-text-primary);\n    }\n  "] }]
+        args: [{ selector: 'pwa-toast-container', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "<div class=\"pwa-toast-container\" aria-live=\"polite\">\n      @for (toast of toastService.toasts(); track toast.id) {\n        <div class=\"pwa-toast\" [ngClass]=\"getToastVariantClass(toast)\">\n          <!-- Status Icon -->\n          <div class=\"pwa-toast__icon\">\n            @if (toast.type === 'success') {\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5 13l4 4L19 7\" />\n              </svg>\n            } @else if (toast.type === 'error') {\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n              </svg>\n            } @else if (toast.type === 'warning') {\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\" />\n              </svg>\n            } @else {\n              <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\">\n                <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" />\n              </svg>\n            }\n          </div>\n\n          <!-- Content: Title & Message -->\n          <div class=\"pwa-toast__content\">\n            <h4 class=\"pwa-toast__title\">{{ toast.title }}</h4>\n            @if (toast.message) {\n              <p class=\"pwa-toast__message\">{{ toast.message }}</p>\n            }\n          </div>\n\n          <!-- Dismiss Button -->\n          <button\n            type=\"button\"\n            class=\"pwa-toast__close\"\n            (click)=\"toastService.dismiss(toast.id)\"\n            aria-label=\"Close notification\"\n          >\n            \u2715\n          </button>\n        </div>\n      }\n    </div>", styles: ["\n    :host {\n      display: contents;\n    }\n    .pwa-toast-container {\n      position: fixed;\n      bottom: 1rem;\n      right: 1rem;\n      z-index: 60;\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n      max-width: 24rem;\n      width: calc(100% - 2rem);\n      pointer-events: none;\n    }\n    .pwa-toast {\n      pointer-events: auto;\n      display: flex;\n      align-items: flex-start;\n      gap: 0.75rem;\n      padding: 0.875rem 1rem;\n      border-radius: var(--pwa-radius-lg);\n      background-color: var(--pwa-bg-surface);\n      border: 1px solid var(--pwa-border);\n      box-shadow: var(--pwa-shadow-xl), var(--pwa-border-glow);\n      backdrop-filter: blur(8px);\n      -webkit-backdrop-filter: blur(8px);\n      animation: pwa-fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1);\n    }\n    .pwa-toast--success {\n      border-left: 4px solid var(--pwa-success);\n    }\n    .pwa-toast--success .pwa-toast__icon {\n      color: var(--pwa-success);\n    }\n    .pwa-toast--error {\n      border-left: 4px solid var(--pwa-danger);\n    }\n    .pwa-toast--error .pwa-toast__icon {\n      color: var(--pwa-danger);\n    }\n    .pwa-toast--warning {\n      border-left: 4px solid var(--pwa-warning);\n    }\n    .pwa-toast--warning .pwa-toast__icon {\n      color: var(--pwa-warning);\n    }\n    .pwa-toast--info {\n      border-left: 4px solid var(--pwa-info);\n    }\n    .pwa-toast--info .pwa-toast__icon {\n      color: var(--pwa-info);\n    }\n    .pwa-toast__icon {\n      flex-shrink: 0;\n      width: 1.25rem;\n      height: 1.25rem;\n      margin-top: 0.125rem;\n    }\n    .pwa-toast__content {\n      flex: 1;\n      min-width: 0;\n    }\n    .pwa-toast__title {\n      margin: 0;\n      font-size: var(--pwa-text-sm);\n      font-weight: 700;\n      color: var(--pwa-text-primary);\n    }\n    .pwa-toast__message {\n      margin: 0.25rem 0 0 0;\n      font-size: var(--pwa-text-xs);\n      color: var(--pwa-text-secondary);\n      line-height: 1.4;\n      word-break: break-word;\n    }\n    .pwa-toast__close {\n      background: transparent;\n      border: none;\n      color: var(--pwa-text-muted);\n      cursor: pointer;\n      padding: 0.25rem;\n      font-size: 0.875rem;\n      line-height: 1;\n      transition: color 0.15s ease;\n    }\n    .pwa-toast__close:hover {\n      color: var(--pwa-text-primary);\n    }\n  "] }]
     }], null, null); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaToastContainerComponent, { className: "PwaToastContainerComponent", filePath: "components/toast/pwa-toast-container.component.ts", lineNumber: 149 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaToastContainerComponent, { className: "PwaToastContainerComponent", filePath: "components/toast-container/pwa-toast-container.component.ts", lineNumber: 104 }); })();
 //# sourceMappingURL=pwa-toast-container.component.js.map

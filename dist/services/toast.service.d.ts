@@ -11,6 +11,6 @@ export declare class PwaToastService {
     dismiss(id: string): void;
     clear(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<PwaToastService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<PwaToastService>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<any>;
 }
 //# sourceMappingURL=toast.service.d.ts.map

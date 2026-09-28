@@ -7,20 +7,7 @@ import { PwaService } from '../../services/pwa.service.js';
   standalone: true,
   imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    @if (pwa.hasUpdate()) {
-      <div class="pwa-update-banner">
-        <span>{{ message() }}</span>
-        <button
-          type="button"
-          class="pwa-btn pwa-btn--sm pwa-update-banner__btn"
-          (click)="pwa.applyUpdate()"
-        >
-          {{ buttonText() }}
-        </button>
-      </div>
-    }
-  `,
+  templateUrl: './pwa-update-banner.component.html',
   styles: [`
     :host {
       display: block;

@@ -6,29 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <div class="pwa-card pwa-kpi-card">
-      <div class="pwa-kpi-card__top">
-        <span class="pwa-kpi-card__label">{{ label() }}</span>
-        <ng-content select="[kpi-badge], [kpi-icon]"></ng-content>
-      </div>
-
-      <div class="pwa-kpi-card__main">
-        <span class="pwa-kpi-card__value">{{ value() }}</span>
-        @if (unit()) {
-          <span class="pwa-kpi-card__unit">{{ unit() }}</span>
-        }
-      </div>
-
-      @if (description()) {
-        <p class="pwa-kpi-card__desc">{{ description() }}</p>
-      }
-
-      <div class="pwa-kpi-card__footer">
-        <ng-content select="[kpi-footer]"></ng-content>
-      </div>
-    </div>
-  `,
+  templateUrl: './pwa-kpi-card.component.html',
   styles: [`
     :host {
       display: block;

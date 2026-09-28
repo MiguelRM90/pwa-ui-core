@@ -60,17 +60,7 @@ export class PwaBadgeComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaBadgeComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-badge', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    <span class="pwa-badge" [ngClass]="badgeClass()">
-      @if (showDot()) {
-        <span class="pwa-badge-dot" [class.pwa-badge-dot--pulse]="pulseDot()"></span>
-      }
-      @if (label()) {
-        <span>{{ label() }}</span>
-      }
-      <ng-content></ng-content>
-    </span>
-  `, styles: ["\n    :host {\n      display: inline-flex;\n    }\n    .pwa-badge--neutral {\n      background-color: var(--pwa-bg-subtle);\n      color: var(--pwa-text-secondary);\n      border-color: var(--pwa-border);\n    }\n  "] }]
+        args: [{ selector: 'pwa-badge', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "<span class=\"pwa-badge\" [ngClass]=\"badgeClass()\">\n  @if (showDot()) {\n    <span class=\"pwa-badge-dot\" [class.pwa-badge-dot--pulse]=\"pulseDot()\"></span>\n  }\n  @if (label()) {\n    <span>{{ label() }}</span>\n  }\n  <ng-content></ng-content>\n</span>\n", styles: ["\n    :host {\n      display: inline-flex;\n    }\n    .pwa-badge--neutral {\n      background-color: var(--pwa-bg-subtle);\n      color: var(--pwa-text-secondary);\n      border-color: var(--pwa-border);\n    }\n  "] }]
     }], null, { variant: [{ type: i0.Input, args: [{ isSignal: true, alias: "variant", required: false }] }], label: [{ type: i0.Input, args: [{ isSignal: true, alias: "label", required: false }] }], showDot: [{ type: i0.Input, args: [{ isSignal: true, alias: "showDot", required: false }] }], pulseDot: [{ type: i0.Input, args: [{ isSignal: true, alias: "pulseDot", required: false }] }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaBadgeComponent, { className: "PwaBadgeComponent", filePath: "components/badge/pwa-badge.component.ts", lineNumber: 33 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaBadgeComponent, { className: "PwaBadgeComponent", filePath: "components/badge/pwa-badge.component.ts", lineNumber: 23 }); })();
 //# sourceMappingURL=pwa-badge.component.js.map

@@ -149,64 +149,7 @@ export class PwaNumericSliderComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaNumericSliderComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-numeric-slider', standalone: true, imports: [CommonModule, FormsModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    <div class="pwa-input-group">
-      <!-- Label & Formatted Value Row -->
-      <div class="pwa-numeric-slider__top">
-        <label class="pwa-label">
-          <span>{{ label() }}</span>
-          @if (hint()) {
-            <span class="pwa-numeric-slider__hint-icon" [title]="hint()">ℹ️</span>
-          }
-        </label>
-        <span class="pwa-numeric-slider__formatted-value">
-          {{ formattedDisplay() }}
-        </span>
-      </div>
-
-      <!-- Numeric Input with Prefix / Suffix -->
-      <div class="pwa-numeric-slider__input-wrapper">
-        @if (prefix()) {
-          <span class="pwa-numeric-slider__affix pwa-numeric-slider__affix--prefix">{{ prefix() }}</span>
-        }
-
-        <input
-          type="number"
-          class="pwa-input"
-          [min]="min()"
-          [max]="max()"
-          [step]="step()"
-          [value]="value()"
-          (input)="onInputChange($event)"
-          [style.padding-left]="prefix() ? '2rem' : null"
-          [style.padding-right]="suffix() ? '2rem' : null"
-        />
-
-        @if (suffix()) {
-          <span class="pwa-numeric-slider__affix pwa-numeric-slider__affix--suffix">{{ suffix() }}</span>
-        }
-      </div>
-
-      <!-- Range Slider -->
-      @if (showSlider()) {
-        <div class="pwa-numeric-slider__slider-row">
-          <input
-            type="range"
-            class="pwa-slider"
-            [min]="min()"
-            [max]="max()"
-            [step]="step()"
-            [value]="value()"
-            (input)="onSliderChange($event)"
-          />
-          <div class="pwa-numeric-slider__min-max">
-            <span>{{ minDisplay() }}</span>
-            <span>{{ maxDisplay() }}</span>
-          </div>
-        </div>
-      }
-    </div>
-  `, styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-numeric-slider__top {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 0.5rem;\n    }\n    .pwa-numeric-slider__hint-icon {\n      cursor: help;\n      font-size: 0.75rem;\n      margin-left: 0.25rem;\n      opacity: 0.7;\n    }\n    .pwa-numeric-slider__formatted-value {\n      font-size: var(--pwa-text-xs);\n      font-weight: 600;\n      color: var(--pwa-text-secondary);\n      font-feature-settings: var(--pwa-font-features);\n    }\n    .pwa-numeric-slider__input-wrapper {\n      position: relative;\n      display: flex;\n      align-items: center;\n      width: 100%;\n    }\n    .pwa-numeric-slider__affix {\n      position: absolute;\n      font-size: var(--pwa-text-sm);\n      font-weight: 500;\n      color: var(--pwa-text-muted);\n      user-select: none;\n      pointer-events: none;\n    }\n    .pwa-numeric-slider__affix--prefix {\n      left: 0.75rem;\n    }\n    .pwa-numeric-slider__affix--suffix {\n      right: 0.75rem;\n    }\n    .pwa-numeric-slider__slider-row {\n      margin-top: 0.25rem;\n      display: flex;\n      flex-direction: column;\n      gap: 0.25rem;\n    }\n    .pwa-numeric-slider__min-max {\n      display: flex;\n      justify-content: space-between;\n      font-size: var(--pwa-text-2xs);\n      color: var(--pwa-text-muted);\n      font-feature-settings: var(--pwa-font-features);\n    }\n  "] }]
+        args: [{ selector: 'pwa-numeric-slider', standalone: true, imports: [CommonModule, FormsModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "<div class=\"pwa-input-group\">\n  <!-- Label & Formatted Value Row -->\n  <div class=\"pwa-numeric-slider__top\">\n    <label class=\"pwa-label\">\n      <span>{{ label() }}</span>\n      @if (hint()) {\n        <span class=\"pwa-numeric-slider__hint-icon\" [title]=\"hint()\">\u2139\uFE0F</span>\n      }\n    </label>\n    <span class=\"pwa-numeric-slider__formatted-value\">\n      {{ formattedDisplay() }}\n    </span>\n  </div>\n\n  <!-- Numeric Input with Prefix / Suffix -->\n  <div class=\"pwa-numeric-slider__input-wrapper\">\n    @if (prefix()) {\n      <span class=\"pwa-numeric-slider__affix pwa-numeric-slider__affix--prefix\">{{ prefix() }}</span>\n    }\n\n    <input\n      type=\"number\"\n      class=\"pwa-input\"\n      [min]=\"min()\"\n      [max]=\"max()\"\n      [step]=\"step()\"\n      [value]=\"value()\"\n      (input)=\"onInputChange($event)\"\n      [style.padding-left]=\"prefix() ? '2rem' : null\"\n      [style.padding-right]=\"suffix() ? '2rem' : null\"\n    />\n\n    @if (suffix()) {\n      <span class=\"pwa-numeric-slider__affix pwa-numeric-slider__affix--suffix\">{{ suffix() }}</span>\n    }\n  </div>\n\n  <!-- Range Slider -->\n  @if (showSlider()) {\n    <div class=\"pwa-numeric-slider__slider-row\">\n      <input\n        type=\"range\"\n        class=\"pwa-slider\"\n        [min]=\"min()\"\n        [max]=\"max()\"\n        [step]=\"step()\"\n        [value]=\"value()\"\n        (input)=\"onSliderChange($event)\"\n      />\n      <div class=\"pwa-numeric-slider__min-max\">\n        <span>{{ minDisplay() }}</span>\n        <span>{{ maxDisplay() }}</span>\n      </div>\n    </div>\n  }\n</div>\n", styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-numeric-slider__top {\n      display: flex;\n      align-items: center;\n      justify-content: space-between;\n      gap: 0.5rem;\n    }\n    .pwa-numeric-slider__hint-icon {\n      cursor: help;\n      font-size: 0.75rem;\n      margin-left: 0.25rem;\n      opacity: 0.7;\n    }\n    .pwa-numeric-slider__formatted-value {\n      font-size: var(--pwa-text-xs);\n      font-weight: 600;\n      color: var(--pwa-text-secondary);\n      font-feature-settings: var(--pwa-font-features);\n    }\n    .pwa-numeric-slider__input-wrapper {\n      position: relative;\n      display: flex;\n      align-items: center;\n      width: 100%;\n    }\n    .pwa-numeric-slider__affix {\n      position: absolute;\n      font-size: var(--pwa-text-sm);\n      font-weight: 500;\n      color: var(--pwa-text-muted);\n      user-select: none;\n      pointer-events: none;\n    }\n    .pwa-numeric-slider__affix--prefix {\n      left: 0.75rem;\n    }\n    .pwa-numeric-slider__affix--suffix {\n      right: 0.75rem;\n    }\n    .pwa-numeric-slider__slider-row {\n      margin-top: 0.25rem;\n      display: flex;\n      flex-direction: column;\n      gap: 0.25rem;\n    }\n    .pwa-numeric-slider__min-max {\n      display: flex;\n      justify-content: space-between;\n      font-size: var(--pwa-text-2xs);\n      color: var(--pwa-text-muted);\n      font-feature-settings: var(--pwa-font-features);\n    }\n  "] }]
     }], null, { label: [{ type: i0.Input, args: [{ isSignal: true, alias: "label", required: true }] }], value: [{ type: i0.Input, args: [{ isSignal: true, alias: "value", required: true }] }], min: [{ type: i0.Input, args: [{ isSignal: true, alias: "min", required: false }] }], max: [{ type: i0.Input, args: [{ isSignal: true, alias: "max", required: false }] }], step: [{ type: i0.Input, args: [{ isSignal: true, alias: "step", required: false }] }], unit: [{ type: i0.Input, args: [{ isSignal: true, alias: "unit", required: false }] }], prefix: [{ type: i0.Input, args: [{ isSignal: true, alias: "prefix", required: false }] }], suffix: [{ type: i0.Input, args: [{ isSignal: true, alias: "suffix", required: false }] }], hint: [{ type: i0.Input, args: [{ isSignal: true, alias: "hint", required: false }] }], showSlider: [{ type: i0.Input, args: [{ isSignal: true, alias: "showSlider", required: false }] }], locale: [{ type: i0.Input, args: [{ isSignal: true, alias: "locale", required: false }] }], valueChange: [{ type: i0.Output, args: ["valueChange"] }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaNumericSliderComponent, { className: "PwaNumericSliderComponent", filePath: "components/numeric-slider/pwa-numeric-slider.component.ts", lineNumber: 126 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaNumericSliderComponent, { className: "PwaNumericSliderComponent", filePath: "components/numeric-slider/pwa-numeric-slider.component.ts", lineNumber: 69 }); })();
 //# sourceMappingURL=pwa-numeric-slider.component.js.map

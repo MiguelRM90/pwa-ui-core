@@ -14,6 +14,6 @@ export declare class ThemeService implements OnDestroy {
     private applyDarkState;
     ngOnDestroy(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ThemeService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<ThemeService>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<any>;
 }
 //# sourceMappingURL=theme.service.d.ts.map

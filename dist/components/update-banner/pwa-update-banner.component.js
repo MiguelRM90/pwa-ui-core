@@ -33,20 +33,7 @@ export class PwaUpdateBannerComponent {
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PwaUpdateBannerComponent, [{
         type: Component,
-        args: [{ selector: 'pwa-update-banner', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: `
-    @if (pwa.hasUpdate()) {
-      <div class="pwa-update-banner">
-        <span>{{ message() }}</span>
-        <button
-          type="button"
-          class="pwa-btn pwa-btn--sm pwa-update-banner__btn"
-          (click)="pwa.applyUpdate()"
-        >
-          {{ buttonText() }}
-        </button>
-      </div>
-    }
-  `, styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-update-banner {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.75rem;\n      padding: 0.5rem 1rem;\n      background-color: var(--pwa-brand-600);\n      color: #ffffff;\n      font-size: var(--pwa-text-xs);\n      font-weight: 500;\n      text-align: center;\n    }\n    .pwa-update-banner__btn {\n      background-color: #ffffff;\n      color: var(--pwa-brand-600);\n      font-weight: 700;\n      border: none;\n    }\n    .pwa-update-banner__btn:hover {\n      background-color: var(--pwa-slate-100);\n    }\n  "] }]
+        args: [{ selector: 'pwa-update-banner', standalone: true, imports: [CommonModule], changeDetection: ChangeDetectionStrategy.OnPush, template: "@if (pwa.hasUpdate()) {\n  <div class=\"pwa-update-banner\">\n    <span>{{ message() }}</span>\n    <button\n      type=\"button\"\n      class=\"pwa-btn pwa-btn--sm pwa-update-banner__btn\"\n      (click)=\"pwa.applyUpdate()\"\n    >\n      {{ buttonText() }}\n    </button>\n  </div>\n}\n", styles: ["\n    :host {\n      display: block;\n      width: 100%;\n    }\n    .pwa-update-banner {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      gap: 0.75rem;\n      padding: 0.5rem 1rem;\n      background-color: var(--pwa-brand-600);\n      color: #ffffff;\n      font-size: var(--pwa-text-xs);\n      font-weight: 500;\n      text-align: center;\n    }\n    .pwa-update-banner__btn {\n      background-color: #ffffff;\n      color: var(--pwa-brand-600);\n      font-weight: 700;\n      border: none;\n    }\n    .pwa-update-banner__btn:hover {\n      background-color: var(--pwa-slate-100);\n    }\n  "] }]
     }], null, { message: [{ type: i0.Input, args: [{ isSignal: true, alias: "message", required: false }] }], buttonText: [{ type: i0.Input, args: [{ isSignal: true, alias: "buttonText", required: false }] }] }); })();
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaUpdateBannerComponent, { className: "PwaUpdateBannerComponent", filePath: "components/banner/pwa-update-banner.component.ts", lineNumber: 52 }); })();
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(PwaUpdateBannerComponent, { className: "PwaUpdateBannerComponent", filePath: "components/update-banner/pwa-update-banner.component.ts", lineNumber: 39 }); })();
 //# sourceMappingURL=pwa-update-banner.component.js.map

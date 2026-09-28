@@ -8,17 +8,7 @@ export type PwaBadgeVariant = 'success' | 'warning' | 'danger' | 'info' | 'neutr
   standalone: true,
   imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <span class="pwa-badge" [ngClass]="badgeClass()">
-      @if (showDot()) {
-        <span class="pwa-badge-dot" [class.pwa-badge-dot--pulse]="pulseDot()"></span>
-      }
-      @if (label()) {
-        <span>{{ label() }}</span>
-      }
-      <ng-content></ng-content>
-    </span>
-  `,
+  templateUrl: './pwa-badge.component.html',
   styles: [`
     :host {
       display: inline-flex;
