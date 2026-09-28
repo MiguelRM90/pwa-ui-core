@@ -1,0 +1,1 @@
+{"version":3,"file":"toast.model.d.ts","sourceRoot":"","sources":["../../src/models/toast.model.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,SAAS,GAAG,SAAS,GAAG,OAAO,GAAG,SAAS,GAAG,MAAM,CAAC;AAEjE,MAAM,WAAW,YAAY;IAC3B,EAAE,EAAE,MAAM,CAAC;IACX,KAAK,EAAE,MAAM,CAAC;IACd,OAAO,CAAC,EAAE,MAAM,CAAC;IACjB,IAAI,EAAE,SAAS,CAAC;IAChB,UAAU,CAAC,EAAE,MAAM,CAAC;CACrB"}

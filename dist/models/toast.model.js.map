@@ -1,0 +1,1 @@
+{"version":3,"file":"toast.model.js","sourceRoot":"","sources":["../../src/models/toast.model.ts"],"names":[],"mappings":"","sourcesContent":["export type ToastType = 'success' | 'error' | 'warning' | 'info';\n\nexport interface ToastMessage {\n  id: string;\n  title: string;\n  message?: string;\n  type: ToastType;\n  durationMs?: number;\n}\n"]}
