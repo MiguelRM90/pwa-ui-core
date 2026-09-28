@@ -38,7 +38,7 @@ body {
   padding-right: env(safe-area-inset-right, 0px);
 }
 
-/* Form controls typography inheritance */
+/* Form controls typography inheritance & button reset */
 input,
 button,
 textarea,
@@ -47,6 +47,17 @@ select {
   font-size: inherit;
   color: inherit;
 }
+
+button {
+  background-color: transparent;
+  background-image: none;
+  border-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
 
 /* Custom modern scrollbar */
 ::-webkit-scrollbar {
