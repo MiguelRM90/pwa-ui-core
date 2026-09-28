@@ -1,7 +1,7 @@
 import { Injectable, inject, signal, OnDestroy } from '@angular/core';
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
 import { filter } from 'rxjs';
-import { BeforeInstallPromptEvent } from '../models/pwa.model';
+import { BeforeInstallPromptEvent } from '../models/pwa.model.js';
 
 @Injectable({
   providedIn: 'root',

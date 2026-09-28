@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PwaToastService } from '../../services/toast.service';
-import { ToastMessage } from '../../models/toast.model';
+import { PwaToastService } from '../../services/toast.service.js';
+import { ToastMessage } from '../../models/toast.model.js';
 
 @Component({
   selector: 'pwa-toast-container',

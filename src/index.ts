@@ -1,3 +1,3 @@
-export * from './models';
-export * from './services';
-export * from './components';
+export * from './models/index.js';
+export * from './services/index.js';
+export * from './components/index.js';

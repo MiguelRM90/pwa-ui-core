@@ -1,3 +1,3 @@
-export * from './pwa.service';
-export * from './theme.service';
-export * from './toast.service';
+export * from './pwa.service.js';
+export * from './theme.service.js';
+export * from './toast.service.js';

@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, input, output, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PwaService } from '../../services/pwa.service';
+import { PwaService } from '../../services/pwa.service.js';
 
 @Component({
   selector: 'pwa-header',

@@ -1,5 +1,5 @@
 import { Injectable, signal, OnDestroy } from '@angular/core';
-import { ThemeMode } from '../models/theme.model';
+import { ThemeMode } from '../models/theme.model.js';
 
 const STORAGE_KEY = 'pwa_ui_theme';
 
